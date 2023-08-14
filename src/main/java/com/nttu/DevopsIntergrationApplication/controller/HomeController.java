@@ -17,4 +17,9 @@ public class HomeController {
     public String showAbout(){
         return "About page";
     }
+
+    @GetMapping("/contact")
+    public String showContact(){
+        return "Contact page";
+    }
 }
