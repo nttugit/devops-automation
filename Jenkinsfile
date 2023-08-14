@@ -20,7 +20,7 @@ pipeline {
         stage ('Push image to Hub') {
             steps {
                 script {
-                    bat 'docker push nicenguyen/devops-integration:v2'
+                    bat 'docker push nicenguyen/devops-integration'
                 }
             }
         }
