@@ -4,7 +4,7 @@ pipeline {
         maven 'maven_3_5_0'
     }
     stages {
-        stage('Build Maven'){
+        stage('Checkout git and build source (maven)'){
             steps {
                 git branch: 'main', url: 'https://github.com/nttugit/devops-automation'
                 bat 'mvn clean install'
@@ -20,9 +20,8 @@ pipeline {
         stage ('Push image to Hub') {
             steps {
                 script {
-                    bat 'docker push nicenguyen/devops-integration'
+                    bat 'docker push nicenguyen/devops-integration:v2'
                 }
-
             }
         }
     }
