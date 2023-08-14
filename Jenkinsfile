@@ -20,10 +20,6 @@ pipeline {
         stage ('Push image to Hub') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dockerhub-password', variable: 'dockerhubpassword')]) {
-                        bat 'docker login -u nicenguyen -p ${dockerhubpassword}'
-                    }
-
                     bat 'docker push nicenguyen/devops-integration'
                 }
 
